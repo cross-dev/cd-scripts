@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo -iu builder git pull origin master
+sudo -iu builder /home/builder/build_image.sh
+
