@@ -5,7 +5,7 @@ set -ex
 (cd /usr/src/docker/contrib && git pull origin master && ./mkimage-arch.sh)
 source <(curl http://169.254.169.254/latest/user-data)
 docker login -e $HUB_EMAIL -p $HUB_PASSWORD -u $HUB_USER
-docker tag archlinux crossdev/archlinux
+docker tag -f archlinux crossdev/archlinux
 docker push crossdev/archlinux
 docker logout
 
